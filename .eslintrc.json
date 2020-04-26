@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "import/no-default-export": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc" },
+        "newlines-between": "always"
+      }
+    ],
+    "no-tabs": "error",
+    "react/jsx-sort-props": ["warn", { "ignoreCase": true }],
+    "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {} // loads ~/tsconfig.json to eslint
+    }
+  }
+}
