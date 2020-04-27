@@ -12,6 +12,7 @@ import capitalize from 'lodash/capitalize';
 import sortBy from 'lodash/sortBy';
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
+import { Empty } from 'components/Empty';
 import { theme } from 'styles/theme';
 import { TDoctorTask } from 'types/doctor';
 
@@ -31,6 +32,17 @@ const TaskList: FC<Props> = ({ loading, tasks, title }) => {
         <LoadingContainer>
           <CircularProgressStyled />
         </LoadingContainer>
+      ) : tasks.length === 0 ? (
+        <Empty
+          ariaLabel="woo-no-more-tasks"
+          emoji="🏝"
+          message={
+            <>
+              <div>You did it!</div>
+              <div>No more tasks!</div>
+            </>
+          }
+        />
       ) : (
         sortBy(tasks, 'priority')
           .reverse()

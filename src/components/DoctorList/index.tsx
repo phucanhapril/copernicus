@@ -3,6 +3,7 @@ import sortBy from 'lodash/sortBy';
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
 import { DoctorCard } from 'components/DoctorCard';
+import { Empty } from 'components/Empty';
 import { theme } from 'styles/theme';
 import { TDoctor } from 'types/doctor';
 
@@ -25,6 +26,21 @@ const DoctorList: FC<Props> = ({
       <StylesLoading>
         <CircularProgressStyled />
       </StylesLoading>
+    );
+  }
+
+  if (doctors.length === 0) {
+    return (
+      <Empty
+        ariaLabel="scream-something-went-wrong"
+        emoji="😱"
+        message={
+          <>
+            <div>Please refresh</div>
+            <div>to find the doctors</div>
+          </>
+        }
+      />
     );
   }
 

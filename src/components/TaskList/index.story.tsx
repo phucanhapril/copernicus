@@ -16,7 +16,11 @@ export default {
 export const Default: FC = () => (
   <TaskList
     loading={boolean('Loading', false)}
-    tasks={MOCK_TASKS.filter((task) => task.doctorId === MOCK_DOCTORS[2].id)}
+    tasks={
+      boolean('Has tasks', true)
+        ? MOCK_TASKS.filter((task) => task.doctorId === MOCK_DOCTORS[2].id)
+        : []
+    }
     title={text(
       'Title',
       `${MOCK_DOCTORS[2].firstName} ${MOCK_DOCTORS[2].lastName}`

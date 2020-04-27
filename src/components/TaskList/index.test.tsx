@@ -8,6 +8,10 @@ describe('TaskList', () => {
     render(<TaskList tasks={MOCK_TASKS} />);
   });
 
+  it('renders empty status if no tasks', () => {
+    const test = render(<TaskList tasks={[]} />);
+    expect(test.getByText('🏝')).toBeTruthy();
+  });
+
   it.todo('renders tasks in desc. priority');
-  it.todo('renders empty status if no tasks');
 });

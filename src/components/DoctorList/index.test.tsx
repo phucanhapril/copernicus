@@ -27,5 +27,8 @@ describe('DoctorList', () => {
     expect(onDoctorClick).toHaveBeenCalledWith(doctor.id);
   });
 
-  it.todo('renders empty status if no doctors');
+  it('renders empty status if no doctors', () => {
+    const test = render(<DoctorList doctors={[]} onDoctorClick={jest.fn()} />);
+    expect(test.getByText('😱')).toBeTruthy();
+  });
 });

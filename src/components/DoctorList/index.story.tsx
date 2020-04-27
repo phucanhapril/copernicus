@@ -16,7 +16,7 @@ export default {
 
 export const Default: FC = () => (
   <DoctorList
-    doctors={MOCK_DOCTORS}
+    doctors={boolean('Has doctors', true) ? MOCK_DOCTORS : []}
     loading={boolean('Loading', false)}
     onDoctorClick={action('Click doctor')}
     selectedDoctorIds={

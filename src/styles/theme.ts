@@ -27,6 +27,7 @@ const font = {
   size: {
     s: '0.875rem',
     m: '1rem', // eslint-disable-line sort-keys
+    huge: '3rem', // eslint-disable-line sort-keys
   },
 };
 
