@@ -12,8 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,
-  h2 {
+  h1, h2, h3 {
     font-family: 'Libre Baskerville', serif;
+    margin-top: 0;
   }
 `;

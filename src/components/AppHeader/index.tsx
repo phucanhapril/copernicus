@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
-
 import { theme } from 'styles/theme';
 
 /** Header containing app title */
-const Header: FC = () => {
+const AppHeader: FC = () => {
   return (
     <Styles>
       <Title>
@@ -47,4 +46,4 @@ const TitleIDot = styled.div`
   width: 0.4rem;
 `;
 
-export { Header };
+export { AppHeader };

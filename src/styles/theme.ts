@@ -12,25 +12,38 @@ const color = {
   springWood: '#FBF9F7',
 };
 
+const font = {
+  mixins: {
+    ellipsisOverflow: `
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    `,
+  },
+  size: {
+    s: '0.875rem',
+    m: '1rem', // eslint-disable-line sort-keys
+    l: '1.125rem', // eslint-disable-line sort-keys
+    xl: '1.25rem',
+  },
+};
+
 const layout = {
   headerHeight: '64px',
   minMobileWidth: '320px',
 };
 
 const space = {
-  xxs: '0.125rem',
   xs: '0.25rem', // eslint-disable-line sort-keys
   s: '0.5rem', // eslint-disable-line sort-keys
-  sm: '0.75rem',
   m: '1rem', // eslint-disable-line sort-keys
   l: '1.5rem', // eslint-disable-line sort-keys
   xl: '2rem',
-  xxl: '2.5rem',
-  xxxl: '3rem',
 };
 
 export const theme = {
   color,
+  font,
   layout,
   space,
 };

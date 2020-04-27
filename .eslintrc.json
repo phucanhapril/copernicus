@@ -16,12 +16,23 @@
       "error",
       {
         "alphabetize": { "order": "asc" },
-        "newlines-between": "always"
+        "newlines-between": "never",
+        "pathGroups": [
+          {
+            "pattern": "{components,constants,styles,types,utils}/**",
+            "group": "parent"
+          }
+        ]
       }
     ],
     "no-tabs": "error",
     "react/jsx-sort-props": ["warn", { "ignoreCase": true }],
-    "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true }]
+    "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true }],
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true }
+    ]
   },
   "settings": {
     "import/resolver": {
