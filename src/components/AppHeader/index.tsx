@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components/macro';
 import { theme } from 'styles/theme';
 
-/** Header containing app title */
+/** Header containing app title, with a lil yellow dot over the i */
 const AppHeader: FC = () => {
   return (
     <Styles>

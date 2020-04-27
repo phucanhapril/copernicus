@@ -3,15 +3,15 @@ import { text, date, boolean } from '@storybook/addon-knobs';
 import { format } from 'date-fns';
 import React, { FC } from 'react';
 import { StorybookWrapper } from 'utils/testing';
-import { DoctorListCard } from '.';
+import { DoctorCard } from '.';
 
 // eslint-disable-next-line import/no-default-export
 export default {
-  component: DoctorListCard,
+  component: DoctorCard,
   decorators: [
     (storyFn: () => FC) => <StorybookWrapper>{storyFn()}</StorybookWrapper>,
   ],
-  title: 'DoctorListCard',
+  title: 'DoctorCard',
 };
 
 export const Default: FC = () => {
@@ -22,12 +22,8 @@ export const Default: FC = () => {
   const selected = boolean('Selected', false);
 
   return (
-    <DoctorListCard
-      degree={degree}
-      dob={dob}
-      doctorId="doctorId"
-      firstName={firstName}
-      lastName={lastName}
+    <DoctorCard
+      doctor={{ degree, dob, firstName, id: 'doctorId', lastName }}
       onClick={action('Click')}
       selected={selected}
     />

@@ -7,15 +7,7 @@ describe('App', () => {
     render(<App />);
   });
 
-  it.skip("adds a doctor's task list when doctor is selected", () => {
-    // Skip
-  });
-
-  it.skip("removes doctor's task list if doctor is reselected", () => {
-    // Skip
-  });
-
-  it.skip('can show multiple task lists', () => {
-    // Skip
-  });
+  it.todo("adds a doctor's task list when doctor is selected");
+  it.todo("removes doctor's task list if doctor is reselected");
+  it.todo('can show multiple task lists');
 });

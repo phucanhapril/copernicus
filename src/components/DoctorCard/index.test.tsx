@@ -1,15 +1,17 @@
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { DoctorListCard } from '.';
+import { DoctorCard } from '.';
 
-describe('DoctorListCard', () => {
+describe('DoctorCard', () => {
   it('renders without crashing', () => {
     render(
-      <DoctorListCard
-        dob="03/02/1904"
-        doctorId="doctorId"
-        firstName="Theodor"
-        lastName="Seuss"
+      <DoctorCard
+        doctor={{
+          dob: '03/02/1904',
+          firstName: 'Theodor',
+          id: 'doctorId',
+          lastName: 'Seuss',
+        }}
         onClick={jest.fn()}
       />
     );
@@ -18,11 +20,13 @@ describe('DoctorListCard', () => {
   it('triggers onClick correctly', () => {
     const onClick = jest.fn();
     const test = render(
-      <DoctorListCard
-        dob="03/02/1904"
-        doctorId="doctorId"
-        firstName="Theodor"
-        lastName="Seuss"
+      <DoctorCard
+        doctor={{
+          dob: '03/02/1904',
+          firstName: 'Theodor',
+          id: 'doctorId',
+          lastName: 'Seuss',
+        }}
         onClick={onClick}
       />
     );

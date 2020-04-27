@@ -13,6 +13,10 @@ const color = {
 };
 
 const font = {
+  family: {
+    body: `'Work Sans', sans-serif`,
+    heading: `'Libre Baskerville', serif`,
+  },
   mixins: {
     ellipsisOverflow: `
       overflow-x: hidden;
@@ -23,8 +27,6 @@ const font = {
   size: {
     s: '0.875rem',
     m: '1rem', // eslint-disable-line sort-keys
-    l: '1.125rem', // eslint-disable-line sort-keys
-    xl: '1.25rem',
   },
 };
 

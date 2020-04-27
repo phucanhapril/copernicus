@@ -10,7 +10,7 @@ describe('DoctorList', () => {
       <DoctorList
         doctors={MOCK_DOCTORS}
         onDoctorClick={jest.fn()}
-        selectedDoctorIds={MOCK_DOCTORS.map((doc) => doc.doctorId)}
+        selectedDoctorIds={MOCK_DOCTORS.map((doc) => doc.id)}
       />
     );
   });
@@ -24,6 +24,8 @@ describe('DoctorList', () => {
     const doctor = MOCK_DOCTORS[0];
     fireEvent.click(test.getByText(doctor.firstName, { exact: false }));
     expect(onDoctorClick).toHaveBeenCalledTimes(1);
-    expect(onDoctorClick).toHaveBeenCalledWith(doctor.doctorId);
+    expect(onDoctorClick).toHaveBeenCalledWith(doctor.id);
   });
+
+  it.todo('renders empty status if no doctors');
 });

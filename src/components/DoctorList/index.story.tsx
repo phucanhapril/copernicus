@@ -21,7 +21,7 @@ export const Default: FC = () => (
     onDoctorClick={action('Click doctor')}
     selectedDoctorIds={
       boolean('Some selected', false)
-        ? [MOCK_DOCTORS[0].doctorId, MOCK_DOCTORS[2].doctorId]
+        ? [MOCK_DOCTORS[0].id, MOCK_DOCTORS[2].id]
         : []
     }
   />

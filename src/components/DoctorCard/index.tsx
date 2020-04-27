@@ -1,35 +1,26 @@
-import Card from '@material-ui/core/Card';
+import { Card } from '@material-ui/core';
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
 import { theme } from 'styles/theme';
 import { TDoctor } from 'types/doctor';
+import { formatDoctorName } from 'utils/doctor';
 
-interface Props extends TDoctor {
+interface Props {
+  doctor: TDoctor;
   onClick: (doctorId: string) => void;
   selected?: boolean;
 }
 
 /** Card representing a doctor */
-const DoctorListCard: FC<Props> = ({
-  degree,
-  dob,
-  doctorId,
-  firstName,
-  lastName,
-  onClick,
-  selected,
-}) => {
+const DoctorCard: FC<Props> = ({ doctor, onClick, selected }) => {
   return (
     <CardStyled
       elevation={0}
-      onClick={() => onClick(doctorId)}
+      onClick={() => onClick(doctor.id)}
       selected={selected}
     >
-      <Name>
-        {firstName} {lastName}
-        {degree && `, ${degree}`}
-      </Name>
-      <Details>{dob}</Details>
+      <Name>{formatDoctorName(doctor)}</Name>
+      <Details>{doctor.dob}</Details>
     </CardStyled>
   );
 };
@@ -52,4 +43,4 @@ const Name = styled.div`
   margin-bottom: ${theme.space.s};
 `;
 
-export { DoctorListCard };
+export { DoctorCard };

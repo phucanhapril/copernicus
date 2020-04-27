@@ -15,8 +15,8 @@ export const mapApiDoctorFields = (apiResponse: {
   return {
     degree: apiResponse.degree || undefined,
     dob: apiResponse.dob || undefined,
-    doctorId: apiResponse.doctor_id,
     firstName: apiResponse.first_name,
+    id: apiResponse.doctor_id,
     lastName: apiResponse.last_name,
   };
 };

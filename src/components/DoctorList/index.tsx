@@ -1,7 +1,8 @@
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { CircularProgress } from '@material-ui/core';
+import sortBy from 'lodash/sortBy';
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
-import { DoctorListCard } from 'components/DoctorListCard';
+import { DoctorCard } from 'components/DoctorCard';
 import { theme } from 'styles/theme';
 import { TDoctor } from 'types/doctor';
 
@@ -29,14 +30,14 @@ const DoctorList: FC<Props> = ({
 
   return (
     <Styles>
-      {doctors.map((doc) => (
-        <DoctorListCardContainer key={`DoctorList_card${doc.doctorId}`}>
-          <DoctorListCard
-            {...doc}
+      {sortBy(doctors, 'lastName').map((doctor) => (
+        <DoctorCardContainer key={`DoctorList_card${doctor.id}`}>
+          <DoctorCard
+            doctor={doctor}
             onClick={onDoctorClick}
-            selected={selectedDoctorIds?.includes(doc.doctorId)}
+            selected={selectedDoctorIds?.includes(doctor.id)}
           />
-        </DoctorListCardContainer>
+        </DoctorCardContainer>
       ))}
     </Styles>
   );
@@ -48,7 +49,7 @@ const CircularProgressStyled = styled(CircularProgress)`
   }
 `;
 
-const DoctorListCardContainer = styled.div`
+const DoctorCardContainer = styled.div`
   :not(:last-child) {
     margin-bottom: ${theme.space.m};
   }
@@ -60,7 +61,6 @@ const Styles = styled.div`
 const StylesLoading = styled(Styles)`
   display: flex;
   justify-content: center;
-  padding-top: ${theme.space.xl};
 `;
 
 export { DoctorList };

@@ -16,11 +16,18 @@ yarn start
 
 ✔ add new doctors from a list of existing doctors
 
-😱 adding a doctor adds the list of tasks for that doctor
+✔ adding a doctor adds the list of tasks for that doctor
 
-😱 tasks show up in order of desc. priority and each task has only one owner
+✔ tasks show up in order of desc. priority
 
-😱 when adding a task list existing lists remain instead of being replaced
+✔ when adding a task list existing lists remain instead of being replaced
+
+## notes/caveats
+
+- possibly slooow api requests: i make a request to `getDoctors` on page load, which would be real bad in a production environment where there are a lot of doctors
+  - possible solutions: 1. paginate the request, 2. use a different request to `getRecentlyViewedDoctors` and add a search input so the user can look up doctors, 3. don't show doctors list unless the user has already searched
+- responsiveness: i made some assumptions about the user's device when using this feature--likely a PC that they can multitask on, maybe a tablet. hence, this would look terrible on mobile
+- testing: didn't finish these, especially the ones that require api mocking
 
 ## resources
 

@@ -1,8 +1,8 @@
 export type TDoctor = {
   degree?: string;
   dob?: string;
-  doctorId: string;
   firstName: string;
+  id: string;
   lastName: string;
 };
 
