@@ -27,6 +27,7 @@ const Styles = styled.div`
 `;
 
 const Message = styled.div`
+  font-size: ${theme.font.size.s};
   * {
     font-size: ${theme.font.size.s};
   }

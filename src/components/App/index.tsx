@@ -11,6 +11,7 @@ import { mapApiDoctorFields, mapApiTaskFields } from 'utils/map';
 
 /** Entryway to app. Contains state for doctor/task selection */
 const App: FC = () => {
+  /** Get list of doctors */
   const [doctors, setDoctors] = useState<TDoctor[]>();
   useEffect(() => {
     fetch(ENDPOINTS.listDoctors)
@@ -21,6 +22,7 @@ const App: FC = () => {
       );
   }, []);
 
+  /** Select doctors to show their task lists */
   const [selectedDoctors, setSelectedDoctors] = useState<string[]>([]);
   const [tasks, setTasks] = useState<{
     [doctorId: string]: TDoctorTask[];
@@ -53,7 +55,7 @@ const App: FC = () => {
       <AppHeader />
       <Content>
         <DoctorListContainer>
-          <DoctorListTitle loading={!doctors}>Doctors</DoctorListTitle>
+          <DoctorListTitle data-loading={!doctors}>Doctors</DoctorListTitle>
           <DoctorList
             doctors={doctors || []}
             loading={!doctors}
@@ -96,8 +98,9 @@ const DoctorListContainer = styled.div`
   padding: ${theme.space.m};
   width: ${theme.layout.minMobileWidth};
 `;
-const DoctorListTitle = styled.h3<{ loading?: boolean }>`
-  margin-bottom: ${({ loading }) => (loading ? theme.space.xl : theme.space.m)};
+const DoctorListTitle = styled.h3<{ ['data-loading']?: boolean }>`
+  margin-bottom: ${(props) =>
+    props['data-loading'] ? theme.space.xl : theme.space.m};
   padding-left: ${theme.space.s};
 `;
 
