@@ -1,6 +1,6 @@
 # copernicus
 
-doctor task management prototype built for galileo health
+doctor task management prototype coding assignment
 
 ## setup
 
